@@ -17,7 +17,7 @@ router.post('/add', (req, res) => {
 
   newTask.save()
     .then(task => res.json(task))
-    .catch(err => res.json(500, err));
+    .catch(err => res.json(500).json({message:err.message}));
 });
 
 router.delete('/delete/:id', (req, res) => {
