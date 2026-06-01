@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "start:prod": "node index.js",
-    "build": "npm run frontend-build && npm run backend-build",
-    "frontend-build": "cd ./frontend && npm install && npm run build",
-    "backend-build": "npm install"
+  "start": "node backend/server.js",
+  "dev": "nodemon backend/server.js",
+  "build": "npm run frontend-build",
+  "frontend-build": "cd ./frontend && npm install && npm run build"
   },
   "author": "James Vickery",
   "license": "MIT",
