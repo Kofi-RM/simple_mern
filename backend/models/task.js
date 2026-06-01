@@ -1,4 +1,4 @@
-const mongoose = require('../db');
+const mongoose = require('../connection/db');
 
 const task = new mongoose.Schema({
   title: { type: String, required: true },

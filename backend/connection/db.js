@@ -6,7 +6,7 @@ try {
 await mongoose.connect(process.env.MONGO_URI);
 console.log("MONGO")
 } catch (err) {
-    console.err(err.message)
+    console.error(err.message)
 }
 
 }
