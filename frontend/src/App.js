@@ -9,19 +9,19 @@ const App = () => {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   const getTasks = useCallback(async () => {
-  const res = await axios.get('http://localhost:3000/api/tasks');
+  const res = await axios.get('http://localhost:3001/api/tasks');
 
   setTasks(res.data);
 }, []);
 
   useEffect(() => {
     getTasks();
-  }, []);
+  }, [getTasks]);
 
   const clickAddTask =  (event) => {
     event.preventDefault();
 
-    axios.post('http://localhost:3000/api/tasks/add', {
+    axios.post('http://localhost:3001/api/tasks/add', {
   title: newTaskTitle
 })
 .then(() => {
