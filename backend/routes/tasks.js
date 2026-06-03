@@ -25,7 +25,7 @@ router.delete('/delete/:id', (req, res) => {
 
   Task.findByIdAndDelete(id)
     .then(task => res.json(task))
-    .catch(err => res.json(500, err));
+    .catch(err => res.status(500).json(err));
 });
 
 router.post('/update/:id', (req, res) => {
