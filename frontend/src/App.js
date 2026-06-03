@@ -9,7 +9,7 @@ const App = () => {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   const getTasks = useCallback(async () => {
-  const res = await axios.get('http://localhost:3001/api/tasks');
+  const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/tasks`);
 
   setTasks(res.data);
 }, []);
@@ -21,7 +21,7 @@ const App = () => {
   const clickAddTask =  (event) => {
     event.preventDefault();
 
-    axios.post('http://localhost:3001/api/tasks/add', {
+    axios.post(`${process.env.REACT_APP_API_URL}/api/tasks/add`, {
   title: newTaskTitle
 })
 .then(() => {
