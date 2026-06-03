@@ -11,13 +11,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors({
   //  origin: "http://localhost:3000"
-  origin: "https://simple-mern-1-lyz6.onrender.com/"
+  origin: "https://simple-mern-1-lyz6.onrender.com"
 }))
 app.use("/api/tasks", routes)
 
 app.get("/", (req,res) => {
   res.send('Home')
 })
+
+app.get("/debug", (req, res) => {
+  res.json({
+    corsConfigured: "https://simple-mern-1-lyz6.onrender.com"
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`🌍 Now listening on localhost:${PORT}`)}
 );
